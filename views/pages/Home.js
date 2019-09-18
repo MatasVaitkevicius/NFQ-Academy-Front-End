@@ -3,9 +3,7 @@ const Home = {
     const view = /*html*/ `<h1>Hello home</h1>`
     return view
   },
-  after_render: async () => {
-
-  }
+  after_render: async () => {}
 
 }
 

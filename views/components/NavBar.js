@@ -3,10 +3,10 @@ const NavBar = {
     const view = /*html*/ `
     <div class="menu-navbar">
       <nav>
-      <a href="/">Home</a>
-      <a href="/admin">Admin</a>
-      <a href="/specialist">Specialist</a>
-      <a href="/lightboard">Lightboard</a>
+      <a href="/#/">Home</a>
+      <a href="/#/admin">Admin</a>
+      <a href="/#/specialist">Specialist</a>
+      <a href="/#/lightboard">Lightboard</a>
       </nav>
     </div>
     `
