@@ -12,12 +12,9 @@ const routes = {
 const router = async () => {
   const navBar = null || document.getElementById('navbar_container');
   const content = null || document.getElementById('page_container');
-  console.log(navBar)
   const request = Utils.parseRequestURL()
-  console.log(request)
   const parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
   const page = routes[parsedURL] ? routes[parsedURL] : fourOFour;
-  console.log(content)
   const [NAVBAR, PAGE] = await Promise.all([
     NavBar.render(),
     page.then(p => p.default.render()),

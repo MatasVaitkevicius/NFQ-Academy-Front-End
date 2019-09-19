@@ -1,15 +1,16 @@
-import addVisitors from './../../js/admin.js'
+import addVisitorForm from './../../js/admin.js';
 
 const Admin = {
   render: async () => {
-    const view = /*html*/ `
-    <div id="add_visitors"></div>
+    const view = /*html*/
+      `
+    <div id="add_visitor"></div>
     <h1>Hello admin</h1>
     `
     return view
   },
   after_render: async () => {
-    addVisitors()
+    addVisitorForm()
   }
 }
 
