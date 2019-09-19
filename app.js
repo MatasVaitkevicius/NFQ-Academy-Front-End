@@ -26,6 +26,9 @@ const router = async () => {
   navBar.innerHTML = NAVBAR;
   content.innerHTML = PAGE;
 
+  await Promise.all([
+    page.then(p => p.default.after_render()),
+  ]);
 }
 
 window.addEventListener('hashchange', router);
