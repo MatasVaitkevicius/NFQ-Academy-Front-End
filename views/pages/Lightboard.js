@@ -1,15 +1,16 @@
-import fetchVisitors from './../../js/visitors.js';
+import showLightboard from './../../js/lightboard.js';
 
 
 const Lightboard = {
   render: async () => {
     const view = /*html*/ `
-    <div id="visitors_list"></div>
+    <h2>Line of People:</h2>
+    <div id="show-lightboard"></div>
     <h1>Hello lightboard</h1>`
     return view
   },
   after_render: async () => {
-    fetchVisitors()
+    showLightboard()
   }
 }
 

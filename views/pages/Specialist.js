@@ -1,9 +1,9 @@
-import fetchVisitors from './../../js/visitors.js';
+import specialistPage from './../../js/specialist.js';
 
 const Specialist = {
   render: async () => {
     const view = /*html*/ `
-        <div id="visitors_list"></div>
+        <div id="saved-visitor-list"></div>
         <h1> Specialist </h1>`
     return view
   },
@@ -12,7 +12,7 @@ const Specialist = {
     //   console.log('Yo')
     //   alert('Yo')
     // })
-    fetchVisitors();
+    specialistPage();
   }
 }
 
