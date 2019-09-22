@@ -1,14 +1,20 @@
 const NavBar = {
   render: async () => {
     const view = /*html*/ `
-    <div class="menu-navbar">
-      <nav>
-      <a href="/#/">Home</a>
-      <a href="/#/admin">Admin</a>
-      <a href="/#/specialist">Specialist</a>
-      <a href="/#/lightboard">Lightboard</a>
-      </nav>
-    </div>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="/#/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/#/admin">Admin</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/#/specialist">Specialist</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/#/lightboard">Lightboard</a>
+  </li>
+</ul>
     `
     return view;
   },

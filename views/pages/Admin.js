@@ -5,8 +5,8 @@ const Admin = {
   render: async () => {
     const view = /*html*/
       `
-    <div id="add_visitor"></div>
-    <div id="saved-visitor-list"></div>
+    <div class="form-group"" id="add_visitor"></div>
+    <ul class="list-group" id="saved-visitor-list"></ul>
     <h1>Hello admin</h1>
     `
     return view

@@ -3,7 +3,7 @@ import specialistPage from './../../js/specialist.js';
 const Specialist = {
   render: async () => {
     const view = /*html*/ `
-        <div id="saved-visitor-list"></div>
+        <div class="container" id="saved-visitor-list"></div>
         <h1> Specialist </h1>`
     return view
   },
