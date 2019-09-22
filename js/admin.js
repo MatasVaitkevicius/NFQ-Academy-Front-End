@@ -6,7 +6,12 @@ const addVisitorForm = () => {
     <label for=visitor-surname>Visitor Surname</label>
     <input type="text" name="visitor-surname" id="visitor_surname">
     <label for=visitor-required-specialist>Visitor required specialist</label>
-    <input type="text" name="visitor-required-specialist" id="visitor_required_specialist">
+    <select name="visitor_required_specialist" id="visitor_required_specialist">
+    <option value="doctor">Doctor</option>
+    <option value="accountant">Accountant</option>
+    <option value="Lawyer" selected>Lawyer</option>
+    </select>
+
     <label for=register-time>Time for appointment</label>
     <input type="date" name="register-time" value="${Date.now()}" id="visitor_register_time">
     <button type="submit" id="add_visitor_btn">Add Visitor</button>
@@ -35,6 +40,7 @@ const addNewVisitorClick = (e) => {
   const savedVisitorList = JSON.parse(window.localStorage.getItem('visitorListLocalStorage')) || [];
   savedVisitorList.push(visitor)
   window.localStorage.setItem('visitorListLocalStorage', JSON.stringify(savedVisitorList))
+  location.reload();
   //savedVisitorList.push(visitor)
   console.log(savedVisitorList)
   // window.localStorage.clear()
