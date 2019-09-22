@@ -7,15 +7,19 @@ const specialistPage = () => {
     console.log("hello")
     document.getElementById('saved-visitor-list').innerHTML =
       `<ul>
-    ${savedVisitorList.map((v, i) => `<li>${v.visitorNumber = i+1}
+    ${savedVisitorList.map((v) => `<li>${v.visitorNumber}
     | ${v.visitorName}
     | ${v.visitorSurname}
     | ${v.visitorSpecialist}
     | ${v.visitorTimeRegistered}</li>
-    <button type="submit" id="delete_visitor_btn">Visitor served</button>`).join("")}
+    <button id="delete_visitor_btn_${v.visitorNumber}">Visitor served</button>`).join("")}
   </ul>
   `;
-    console.log(savedVisitorList)
+    savedVisitorList.forEach((v) => {
+      console.log(v.visitorNumber)
+      document.getElementById(`delete_visitor_btn_${v.visitorNumber}`).addEventListener('click', deleteVisitor.bind(null, v.visitorNumber), false);
+    });
+
   } else {
     console.log("no")
     document.getElementById('saved-visitor-list').innerHTML =
@@ -23,8 +27,11 @@ const specialistPage = () => {
   }
 }
 
-const deleteVisitor = (e, index) => {
-  e.preventDefault()
+const deleteVisitor = (visitorNumber) => {
+  const visitorList = fetchVisitors()
+  const filteredVisitorList = visitorList.filter((v) => v.visitorNumber !== visitorNumber)
+  window.localStorage.setItem('visitorListLocalStorage', JSON.stringify(filteredVisitorList))
+  console.log(filteredVisitorList)
 }
 
 export default specialistPage

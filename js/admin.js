@@ -11,7 +11,7 @@ const addVisitorForm = () => {
     <input type="date" name="register-time" value="${Date.now()}" id="visitor_register_time">
     <button type="submit" id="add_visitor_btn">Add Visitor</button>
   </form>`
-  var form = document.getElementById("add_visitor_form");
+  //var form = document.getElementById("add_visitor_form");
   document.getElementById("add_visitor_btn").addEventListener('click', addNewVisitorClick.bind(event));
 }
 
