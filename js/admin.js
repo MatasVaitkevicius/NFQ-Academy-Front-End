@@ -22,20 +22,22 @@ const addNewVisitorClick = (e) => {
   const visitorSurname = document.getElementById('visitor_surname').value
   const visitorSpecialist = document.getElementById('visitor_required_specialist').value
   const visitorTimeRegistered = document.getElementById('visitor_register_time').value
-  visitorList.push({
+  const visitorCounter = Number(window.localStorage.getItem('visitorCounterLocalStorage')) || 0
+  const visitor = {
     visitorName,
     visitorSurname,
     visitorSpecialist,
-    visitorTimeRegistered
-  })
-  //window.localStorage.clear();
-  var savedVisitorList = JSON.parse(window.localStorage.getItem('visitorListLocalStorage')) || [];
-  savedVisitorList.push(visitorList)
-  console.log(savedVisitorList)
+    visitorTimeRegistered,
+    visitorNumber: visitorCounter + 1,
+  }
+  window.localStorage.setItem('visitorCounterLocalStorage', visitor.visitorNumber)
+  // window.localStorage.clear()
+  const savedVisitorList = JSON.parse(window.localStorage.getItem('visitorListLocalStorage')) || [];
+  savedVisitorList.push(visitor)
   window.localStorage.setItem('visitorListLocalStorage', JSON.stringify(savedVisitorList))
+  //savedVisitorList.push(visitor)
   console.log(savedVisitorList)
-  //window.localStorage.clear();
-
+  // window.localStorage.clear()
 }
 
 export default addVisitorForm
